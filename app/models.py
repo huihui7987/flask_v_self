@@ -1,3 +1,4 @@
+
 from datetime import datetime
 import hashlib
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -48,9 +49,7 @@ class Role(db.Model):
 
     def __repr__(self):
         return '<Role %r>' % self.name
-'''
-提升关联表的地位，变为可访问的模型
-'''
+
 class Follow(db.Model):
     __tablename__ = 'follows'
     #拆为两个基本的一对多关系
