@@ -17,7 +17,7 @@ Werkzeug==0.11.5
 alembic==0.8.5
 blinker==1.4
 itsdangerous==0.24
-flask-httpauth-3.1.2
+flask-httpauth==3.1.2
 
 
 
