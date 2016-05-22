@@ -110,7 +110,7 @@ def edit_profile_admin(id):
     return render_template('edit_profile.html', form=form, user=user)
 
 
-#博客文章的固定链接
+
 @main.route('/post/<int:id>', methods=['GET', 'POST'])
 def post(id):
     post = Post.query.get_or_404(id)
@@ -127,7 +127,7 @@ def post(id):
         page = (post.comments.count() - 1) // \
             current_app.config['FLASKY_COMMENTS_PER_PAGE'] + 1
 
-        ###修改反人类的设计，新评论展现在最上面，与posts一致
+
     pagination = post.comments.order_by( Comment.timestamp.desc()).paginate(
         page, per_page=current_app.config['FLASKY_COMMENTS_PER_PAGE'],
         error_out=False)
@@ -200,10 +200,7 @@ def followers(username):
                            endpoint='.followers', pagination=pagination,
                            follows=follows)
 
-'''
-关于自身文章不能看到的问题，只需要把user.html中 '... and user != current_user',去掉，
-就是把自身看作一个陌生人，可以选择关注自身或者不关注
-'''
+
 @main.route('/followed-by/<username>')
 def followed_by(username):
     user = User.query.filter_by(username=username).first()
