@@ -19,5 +19,7 @@ blinker==1.4
 itsdangerous==0.24
 flask-httpauth==3.1.2
 markdown==2.6.6
-
+bleach==1.4.2
+html5lib==0.9999999
+six==1.10.0
 
