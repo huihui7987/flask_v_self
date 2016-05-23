@@ -56,13 +56,17 @@ def profile(length=25, profile_dir=None):
 def deploy():
     """Run deployment tasks."""
     from flask.ext.migrate import upgrade
-    from app.models import Role, User
+    from app.models import Role, User,Post
 
     # migrate database to latest revision
     upgrade()
 
     # create user roles
     Role.insert_roles()
+
+    #create blog
+    User.generate_fake(35)
+    Post.generate_fake(35)
 
     # create self-follows for all users
     User.add_self_follows()
