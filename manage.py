@@ -55,10 +55,11 @@ def profile(length=25, profile_dir=None):
 @manager.command
 def deploy():
     """Run deployment tasks."""
-    from flask.ext.migrate import upgrade
+    from flask.ext.migrate import migrate,upgrade
     from app.models import Role, User,Post
 
     # migrate database to latest revision
+    migrate()
     upgrade()
 
     # create user roles
