@@ -133,7 +133,7 @@ class User(UserMixin, db.Model):
         #self.follow(self)
 
         if self.role is None:
-            if self.email == 'huihui7987@126.com':#current_app.config['FLASKY_ADMIN']:
+            if self.email == 'flyhui_admin@126.com':#current_app.config['FLASKY_ADMIN']:
                 self.role = Role.query.filter_by(permissions=0xff).first()
             if self.role is None:
                 self.role = Role.query.filter_by(default=True).first()

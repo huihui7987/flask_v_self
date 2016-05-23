@@ -10,11 +10,11 @@ class Config:
     MAIL_SERVER = 'smtp.126.com'#'smtp.googlemail.com'
     MAIL_PORT = 25#587
     MAIL_USE_TLS = True
-    MAIL_USERNAME = 'huihui7987@126.com'#os.environ.get('MAIL_USERNAME')
+    MAIL_USERNAME = 'flyhui_admin@126.com'#os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = 'huihui798'#os.environ.get('MAIL_PASSWORD')
     FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
-    FLASKY_MAIL_SENDER = 'Flasky Admin <huihui7987@126.com>'
-    FLASKY_ADMIN = 'huihui7987'#os.environ.get('FLASKY_ADMIN')
+    FLASKY_MAIL_SENDER = 'Flasky Admin <flyhui_admin@126.com>'
+    FLASKY_ADMIN = 'flyhui'#os.environ.get('FLASKY_ADMIN')
     FLASKY_POSTS_PER_PAGE = 20
     FLASKY_FOLLOWERS_PER_PAGE = 50
     FLASKY_COMMENTS_PER_PAGE = 30
