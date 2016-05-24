@@ -12,7 +12,7 @@
         <p>
             {% if user.name %}{{ user.name }}<br>{% endif %}
             {% if user.location %}
-                From <a href="http://maps.google.com/?q={{ user.location }}">{{ user.location }}</a><br>
+                From <a href="http://maps.baidu.com/?q={{ user.location }}">{{ user.location }}</a><br>
             {% endif %}
         </p>
         {% endif %}

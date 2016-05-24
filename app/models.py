@@ -125,6 +125,15 @@ class User(UserMixin, db.Model):
                 db.session.add(user)
                 db.session.commit()
 
+    @staticmethod
+    def add_admin_follows():
+        for user in User.query.all(): #fouce on admin
+            if not user.is_following(user):
+                user.follow(user)
+                db.session.add(user)
+                db.session.commit()
+
+
 
     def __init__(self, **kwargs):
         super(User, self).__init__(**kwargs)
@@ -243,6 +252,8 @@ class User(UserMixin, db.Model):
         if not self.is_following(user):
             f = Follow(follower = self,followed=user)
             self.followed.append(f)
+            db.session.add(f)
+            db.session.commit()
 
     def unfollow(self,user):
         f = self.followed.filter_by(followed_id = user.id).first()
